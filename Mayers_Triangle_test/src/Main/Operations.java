@@ -2,33 +2,34 @@ package Main;
 
 public class Operations {
 	
-	public static String ResultStr = "Обычный теругольник";
-	
-	public static int FirstSide = 0, SecondSide = 0, ThirdSide = 0;
-	
-	public static String Result(String str) {
-		str = ResultStr;
-		if(FirstSide == SecondSide && SecondSide == ThirdSide){
-			str = "Треугольник равносторонний";
-		}
-		else{
-			if(FirstSide == SecondSide){
-				str = "Треугольник равнобедренный 1 и 2";
-			} else if(SecondSide == ThirdSide){
-				str = "Треугольник равнобедренный 2 и 3";
-			} else if(FirstSide == ThirdSide){
-				str = "Треугольник равнобедренный 1 и 3";
-			} else if((FirstSide*FirstSide + ThirdSide*ThirdSide) == SecondSide*SecondSide){
-				str = "Треугольник прямоугольный 2-гипот";
-			} else if((FirstSide*FirstSide + SecondSide*SecondSide) == ThirdSide*ThirdSide){
-				str = "Треугольник прямоугольный 3-гипот";
-			} else if((SecondSide*SecondSide + ThirdSide*ThirdSide) == FirstSide*FirstSide){
-				str = "Треугольник прямоугольный 1-гипот";
-			}	
-			
-			//str = ResultStr;
-		}
+	public static String Result(int FirstSide, int SecondSide, int ThirdSide) {
 		
-		return str;
+		if(FirstSide + SecondSide <= ThirdSide){
+			return "";
+		} else if(FirstSide + ThirdSide <= SecondSide){
+			return "";
+		} else if(SecondSide + ThirdSide <= FirstSide){
+			return "";
+		} else{ 		
+			if(FirstSide == SecondSide && SecondSide == ThirdSide){
+				str = "This is equilateral triangle.";
+			}
+			else{
+				if(FirstSide == SecondSide){
+					str = "This is isosceles triangle. 1 and 2 sides are equal.";
+				} else if(SecondSide == ThirdSide){
+					str = "This is isosceles triangle. 2 and 3 sides are equal.";
+				} else if(FirstSide == ThirdSide){
+					str = "This is isosceles triangle. 1 and 3 sides are equal.";
+				} else if((FirstSide*FirstSide + ThirdSide*ThirdSide) == SecondSide*SecondSide){
+					str = "This is right triangle. 2 side is hypotenuse.";
+				} else if((FirstSide*FirstSide + SecondSide*SecondSide) == ThirdSide*ThirdSide){
+					str = "This is right triangle. 3 side is hypotenuse.";
+				} else if((SecondSide*SecondSide + ThirdSide*ThirdSide) == FirstSide*FirstSide){
+					str = "This is right triangle. 1 side is hypotenuse.";
+				}	
+			}	
+			return str;
+		}
 	}
 }
