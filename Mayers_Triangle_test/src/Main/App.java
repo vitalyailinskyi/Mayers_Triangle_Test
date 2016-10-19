@@ -10,6 +10,8 @@ public class App extends Frame implements ActionListener {
 	
 	public int state = 0;
 	
+	public int FirstSide = 0, SecondSide = 0, ThirdSide = 0;
+	
 	public static String s1 = null,s2 = null,s3 = null;
 	
 	App(String title) {
@@ -41,7 +43,7 @@ public class App extends Frame implements ActionListener {
 		g.drawString("Insert the values of the sides:", 40, 55);
 		g.clearRect(0, 100, 330, 230);
 		if(state == 1){
-			g.drawString(Operations.Result(null), 15, 210);
+			g.drawString(Operations.Result(FirstSide, SecondSide, ThirdSide), 15, 210);
 		}
 	}
 	
@@ -50,9 +52,9 @@ public class App extends Frame implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		getText();
 		if(s1.length()!=0 && s2.length()!=0 && s3.length()!=0){
-		Operations.FirstSide = Integer.parseInt(App.s1);
-		Operations.SecondSide = Integer.parseInt(App.s2);
-		Operations.ThirdSide = Integer.parseInt(App.s3);
+		this.FirstSide = Integer.parseInt(App.s1);
+		this.SecondSide = Integer.parseInt(App.s2);
+		this.ThirdSide = Integer.parseInt(App.s3);
 		state = 1;}
 		paint(getGraphics());
 		state = 0;
