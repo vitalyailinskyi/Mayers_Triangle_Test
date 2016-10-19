@@ -41,7 +41,6 @@ public class App extends Frame implements ActionListener {
 		g.drawString("Insert the values of the sides:", 40, 55);
 		g.clearRect(0, 100, 330, 230);
 		if(state == 1){
-			//g.clearRect(0, 100, 330, 230);
 			g.drawString(Operations.Result(null), 15, 210);
 		}
 	}
@@ -49,27 +48,21 @@ public class App extends Frame implements ActionListener {
 
 
 	public void actionPerformed(ActionEvent ae) {
-		Stroka();
+		getText();
 		if(s1.length()!=0 && s2.length()!=0 && s3.length()!=0){
 		Operations.FirstSide = Integer.parseInt(App.s1);
 		Operations.SecondSide = Integer.parseInt(App.s2);
 		Operations.ThirdSide = Integer.parseInt(App.s3);
 		state = 1;}
-		
-		
 		paint(getGraphics());
 		state = 0;
 	}
 	
-	public String Stroka(){
+	public void getText(){
 		s1 = text1.getText();
 		s2 = text2.getText();
 		s3 = text3.getText();
-		
-		//System.out.println("¬ведена строка1 "+ s1);
-		//System.out.println("¬ведена строка2 "+ s2);
-		//System.out.println("¬ведена строка3 "+ s3);
-		return null;
+		return;
 	}
 }
 
